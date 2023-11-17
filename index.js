@@ -14,6 +14,8 @@ app.use(cookieParser());
 app.use(cors({
   credentials: true,
   origin: process.env.CLIENT_URL,
+  methods: 'GET, POST, OPTIONS, PUT, PATCH, DELETE',
+  allowedHeaders: 'X-Requested-With,content-type'
 }));
 app.use("/api", router);
 app.use(errorMiddleware);
